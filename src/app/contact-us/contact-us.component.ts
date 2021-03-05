@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {User} from "../app.component";
 import {HttpClient} from "@angular/common/http";
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -45,7 +45,7 @@ export class ContactUsComponent implements OnInit {
     this.modelMessage.name=this.modelUser.firstname+this.modelUser.lastname;
     this.modelMessage.email=this.modelUser.email;
 
-    let url = "http://localhost:8080/contact";
+    let url = environment.baseUrl+'/contact';
     this.http.post <contact>(url,this.modelMessage).subscribe(
       res => {
         ContactUsComponent.changeLoading();

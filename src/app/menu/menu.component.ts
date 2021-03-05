@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {MenuServiceService} from "../menu-service.service";
 import {AppComponent} from "../app.component";
 import {count} from "rxjs/operators";
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-menu',
@@ -50,7 +51,7 @@ export class MenuComponent implements OnInit {
 
   getTotal():void{
     console.log(this.values);
-    let url = "http://localhost:8080/cart";
+    let url = environment.baseUrl+'/cart';
     this.modalCart.quantity1=this.values[0].quantity;
     this.modalCart.quantity2=this.values[1].quantity;
     this.modalCart.quantity3=this.values[2].quantity;
