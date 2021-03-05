@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppComponent, User} from "../app.component";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
